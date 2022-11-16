@@ -24,3 +24,9 @@ a {
     background: black;
   }
 }
+
+pre {
+  box-shadow: rgb(0 0 0 / 8%) 0px 40px 64px -12px, rgb(0 0 0 / 5%) 0px 0px 14px -4px, rgb(0 0 0 / 10%) 0px 32px 48px -8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+}
