@@ -3,7 +3,10 @@ const CodeBlock = dynamic(
   () => import('../components/code-block'),
   { ssr: false }
 )
-import { CONTENT_TYPE_CODE } from '../data/utils'
+import {
+  CONTENT_TYPE_CODE,
+  CONTENT_TYPE_TITLE,
+} from '../data/utils'
 import styles from '../styles/shared.module.scss'
 
 const ContentRenderer = ({ content }) => (
@@ -15,7 +18,11 @@ const ContentRenderer = ({ content }) => (
             <CodeBlock code={d.content} />
             {d.endWithLineBreak && <div className={styles.lineBreak} />}
           </>
-        ) : (
+        ) :
+        d.type === CONTENT_TYPE_TITLE
+          ? (
+            <div className={styles.title}>{d.content}</div>
+          ) : (
           <div className={styles.textContent}>
             <div className={styles.textTitle}>
               {d.title}

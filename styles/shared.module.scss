@@ -3,7 +3,7 @@
 
 .pageContentWrapper {
   padding: 30px;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .textContent {
@@ -19,4 +19,10 @@
   height: 1px;
   background: lightgrey;
   margin: 20px 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
