@@ -3,6 +3,9 @@ import { CONTENT_TYPE_CODE, HOME_PAGE_CONTENT } from '../data'
 
 export default function LandingPage() {
   return (
-    <Page content={HOME_PAGE_CONTENT} title={'Accelerate Challenge'} />
+    <Page
+      content={HOME_PAGE_CONTENT}
+      title={'Accelerate Challenge'}
+    />
   )
 }

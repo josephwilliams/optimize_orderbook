@@ -11,10 +11,17 @@ const ContentRenderer = ({ content }) => (
     {content.map(d => (
       d.type === CONTENT_TYPE_CODE
         ? (
-          <CodeBlock code={d.content} />
+          <>
+            <CodeBlock code={d.content} />
+            {d.endWithLineBreak && <div className={styles.lineBreak} />}
+          </>
         ) : (
           <div className={styles.textContent}>
+            <div className={styles.textTitle}>
+              {d.title}
+            </div>
             {d.content}
+            {d.endWithLineBreak && <div className={styles.lineBreak} />}
           </div>
         )
     ))}
