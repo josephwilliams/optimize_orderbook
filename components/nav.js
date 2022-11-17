@@ -24,7 +24,6 @@ const Nav = () => {
     <div className={styles.navWrapper}>
       <div className={styles.navItemsContainer}>
         {NAV_ITEMS.map(({ title, url }) => {
-          console.log('> router', router)
           const isActive = router.pathname === url
           return (
             <Link
