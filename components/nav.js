@@ -32,6 +32,7 @@ const Nav = () => {
                 styles.link,
                 isActive && styles.linkActive,
               )}
+              key={title}
             >
               {title}
             </Link>

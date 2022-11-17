@@ -11,19 +11,19 @@ import styles from '../styles/shared.module.scss'
 
 const ContentRenderer = ({ content }) => (
   <>
-    {content.map(d => (
+    {content.map((d, i) => (
       d.type === CONTENT_TYPE_CODE
         ? (
-          <>
+          <div key={i}>
             <CodeBlock code={d.content} />
             {d.endWithLineBreak && <div className={styles.lineBreak} />}
-          </>
+          </div>
         ) :
         d.type === CONTENT_TYPE_TITLE
           ? (
-            <div className={styles.title}>{d.content}</div>
+            <div className={styles.title} key={i}>{d.content}</div>
           ) : (
-          <div className={styles.textContent}>
+          <div className={styles.textContent} key={i}>
             <div className={styles.textTitle}>
               {d.title}
             </div>
