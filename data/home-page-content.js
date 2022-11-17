@@ -1,4 +1,4 @@
-export const CONTENT_TYPE_CODE = 'CONTENT_TYPE_CODE'
+import { CONTENT_TYPE_CODE } from './utils'
 
 const data = [
   {

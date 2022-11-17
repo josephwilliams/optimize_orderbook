@@ -1,5 +1,6 @@
+import classnames from 'classnames'
 import Link from 'next/link'
-
+import { useRouter } from 'next/router'
 import styles from '../styles/nav.module.scss'
 
 const NAV_ITEMS = [
@@ -18,12 +19,25 @@ const NAV_ITEMS = [
 ]
 
 const Nav = () => {
+  const router = useRouter()
   return (
     <div className={styles.navWrapper}>
       <div className={styles.navItemsContainer}>
-        {NAV_ITEMS.map(({ title, url }) => (
-          <Link href={url}>{title}</Link>
-        ))}
+        {NAV_ITEMS.map(({ title, url }) => {
+          console.log('> router', router)
+          const isActive = router.pathname === url
+          return (
+            <Link
+              href={url}
+              className={classnames(
+                styles.link,
+                isActive && styles.linkActive,
+              )}
+            >
+              {title}
+            </Link>
+          )
+        })}
       </div>
     </div>
   )
