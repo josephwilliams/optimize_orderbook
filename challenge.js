@@ -66,35 +66,6 @@ const mapOrderStrToArrWithoutMemoization = str => {
   return orders
 }
 
-
-// this can be optimized futher by splitting the initial string by '|' rather than '\r',
-// which feels a bit wrong, but works if our sample string preserves its current pattern
-const mapOrderStrToArrOptSplit = str => {
-  const orders = []
-  // memoize order type by index in orders array
-  // by doing this, we only have to iterate a single reduce function to return orders array with items and their respective counts
-  const orderTypesIndex = {}
-  str.split('|').forEach(o => {
-    const order = o.split('|')
-    const orderType = o[0]
-  }, [])
-}
-
-// this function takes the data string and returns an object whose keys
-// are the order types (e.g. 'banana') and values are order count
-// ex: { banana: 3, beef: 2 }
-const mapOrderStrToItemCount = str => {
-  const itemCounts = {}
-  const orders = str.split('\r')
-  orders.forEach(o => {
-    const order = o.split('|')
-    const orderType = order[0]
-    const orderId = order[1]
-    itemCounts[orderType] = itemCounts[orderType] ? itemCounts[orderType] + 1 : 1
-  })
-  return itemCounts
-}
-
 const SAMPLE_STRING_1 = 'carrot|order1\rbanana|order1\rbanana|order2\rchicken|order2\rbeef|order2\rbanana|order6\rbeef|order6'
 
 const computeRegularItems = (dataStr, topItemsCount) => {

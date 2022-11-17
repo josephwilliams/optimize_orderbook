@@ -1,4 +1,4 @@
-import { CONTENT_TYPE_CODE } from './utils'
+import { CONTENT_TYPE_CODE, formatText } from './utils'
 
 const data = [
   {
@@ -56,7 +56,7 @@ const data = [
            orders[ordersLength] = [ orderType, 1 ]
            ordersLength += 1
          }
-      }, [])
+      })
 
       return orders
     }
@@ -92,7 +92,7 @@ const mapOrderStrToItemCount = str => {
   endWithLineBreak: true,
 },
 {
-  content: JSON.stringify(`Lastly, another optimization, although it felt janky, may have been to split the initial order string by \r, rather than by the pipe symbol |.`).replace('"', '').replace('"', '')
+  content: formatText(`Lastly, another optimization, although it felt janky, may have been to split the initial order string by \r, rather than by the pipe symbol |.`)
 },
 ]
 
